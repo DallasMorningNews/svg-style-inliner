@@ -27,7 +27,12 @@ function explicitlySetStyle(element) {
     for (i=0, len=cSSStyleDeclarationComputed.length; i<len; i++) {
         key = cSSStyleDeclarationComputed[i];
         value = cSSStyleDeclarationComputed.getPropertyValue(key);
-        if (value !== '') {
+        // Write style if not a null value AND not set by an inline style
+        // or set with !important.
+        if (
+          value !== '' &&
+          (element.attributes.getNamedItem(key) === null || value.indexOf('!important') > -1)
+        ) {
             computedStyleStr += key + ":" + value + ";";
         }
     }

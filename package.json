@@ -1,6 +1,6 @@
 {
   "name": "svg-style-inliner",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Inlines styles for all elements in an SVG tree. Useful for creating SVG screenshots with libs like html2canvas.",
   "main": "index.js",
   "scripts": {
